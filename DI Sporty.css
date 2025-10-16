@@ -31,6 +31,7 @@ header.scrolled {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -95,49 +96,6 @@ body {
     background-color: #f5f9f9;
     color: #333;
     line-height: 1.6;
-}
-
-/* Floating Ticket Button */
-.ticket-float {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: all 0.3s ease;
-}
-
-.ticket-float.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.ticket-float.hide {
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-}
-
-.btn-ticket {
-    background: linear-gradient(135deg, #1a5f3f 0%, #2d8659 100%);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(26, 95, 63, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.btn-ticket:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 95, 63, 0.4);
 }
 
 /* Hero Section */

@@ -787,58 +787,6 @@ nav a:hover {
     background-color: var(--primary-dark);
 }
 
-/* ============= STICKY TICKET FOOTER (Muncul saat scroll) ============= */
-.sticky-ticket-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 900;
-    /* Mulai dari luar viewport, akan diubah oleh JS saat scroll */
-    transform: translateY(100%); 
-    transition: transform 0.3s ease-out;
-}
-
-.ticket-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-ticket-date {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.footer-ticket-price {
-    font-size: 14px;
-    color: var(--primary-dark);
-    font-weight: 700;
-}
-
-.get-tickets-button-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.get-tickets-button-footer:hover {
-    background-color: var(--primary-dark);
-}
-
-
 /* ============= FOOTER SECTION (Dari ketentuan) ============= */
 .site-footer {
     background-color: #1e293b;
