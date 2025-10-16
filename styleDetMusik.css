@@ -1,0 +1,318 @@
+/* ============= HALAMAN DETAIL EVENT ============= */
+
+.detail-container {
+    background-color: #f8f8f8;
+    min-height: 100vh;
+}
+
+/* Hero Banner */
+.hero-banner {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.archify-logo-large {
+    font-size: 72px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: -3px;
+    margin-bottom: 15px;
+}
+
+.archify-logo-large span {
+    font-weight: 700;
+}
+
+.archify-location-large {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+.archify-ribbon-large {
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    right: -200px;
+    top: -150px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f, #c44569, #a83279, #862d86, #5f27cd);
+    border-radius: 100px;
+    transform: rotate(45deg);
+    filter: blur(60px);
+    opacity: 0.7;
+}
+
+/* Detail Content */
+.detail-content {
+    max-width: 1200px;
+    margin: -60px auto 0;
+    padding: 0 20px 40px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    position: relative;
+}
+
+.detail-left {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Detail Header */
+.detail-date-small {
+    font-size: 14px;
+    color: #6e6e6e;
+    margin-bottom: 8px;
+}
+
+.detail-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.organizer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.organizer-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.organizer-name {
+    font-size: 14px;
+    color: #1e1e1e;
+}
+
+.follow-btn {
+    margin-left: auto;
+    padding: 6px 16px;
+    background: transparent;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.follow-btn:hover {
+    background: #f5f5f5;
+}
+
+/* Description */
+.detail-description {
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 30px;
+}
+
+.detail-description p {
+    font-size: 16px;
+    color: #3e3e3e;
+    line-height: 1.6;
+}
+
+/* Detail Sections */
+.detail-section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detail-section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 16px;
+}
+
+.info-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.icon {
+    flex-shrink: 0;
+    stroke-width: 2;
+    color: #6e6e6e;
+}
+
+.location-name {
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 4px;
+}
+
+.location-address {
+    font-size: 14px;
+    color: #6e6e6e;
+    margin-bottom: 8px;
+}
+
+.get-directions {
+    font-size: 14px;
+    color: #3659e3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.get-directions:hover {
+    text-decoration: underline;
+}
+
+/* Highlights */
+.highlights {
+    margin-top: 16px;
+}
+
+.highlights-title {
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 12px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #3e3e3e;
+}
+
+/* Sidebar */
+.detail-sidebar {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.ticket-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 16px;
+}
+
+.ticket-info {
+    margin-bottom: 20px;
+}
+
+.ticket-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e1e1e;
+    margin-bottom: 4px;
+}
+
+.ticket-datetime {
+    font-size: 14px;
+    color: #6e6e6e;
+}
+
+.get-tickets-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #d93900;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.get-tickets-btn:hover {
+    background-color: #c23300;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: #f5f5f5;
+    border-color: #b0b0b0;
+}
+
+.action-btn svg {
+    stroke-width: 2;
+    color: #1e1e1e;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-sidebar {
+        position: static;
+    }
+    
+    .event-card.featured {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .archify-logo-large {
+        font-size: 48px;
+    }
+    
+    .archify-location-large {
+        font-size: 24px;
+    }
+    
+    .detail-title {
+        font-size: 28px;
+    }
+}
