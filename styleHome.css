@@ -84,46 +84,38 @@ nav a:hover {
     color: #2563eb;
 }
 
-/* ============= CSS-ONLY SLIDER STYLES ============= */
-
 .hero {
-    /* Pertahankan lebar maksimum agar berpusat */
     max-width: 1400px; 
     margin: 40px auto; 
 }
 
-/* Ganti .slider dengan container baru */
 .slider-container-css-only {
     position: relative;
     width: 100%;
     height: 500px;
-    overflow: hidden; /* Hanya menampilkan satu slide */
-    border-radius: 30px; /* Pojok melengkung */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Tambahkan shadow agar lebih menonjol */
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
 }
 
-/* Sembunyikan Radio Buttons */
 .slider-radio {
     display: none;
 }
 
-/* Wrapper untuk semua slide - Inilah yang akan bergeser */
 .slides-wrapper {
-    width: 300%; /* Lebar total 100% * 3 slide */
+    width: 300%;
     height: 100%;
-    display: flex; /* Untuk menempatkan slide secara horizontal */
-    transition: transform 0.6s ease-in-out; /* Animasi pergeseran */
+    display: flex; 
+    transition: transform 0.6s ease-in-out; 
 }
 
-/* Setiap slide */
 .slide {
-    width: calc(100% / 3); /* Setiap slide mengambil 1/3 dari lebar wrapper (100% lebar container) */
+    width: calc(100% / 3); 
     height: 100%;
-    flex-shrink: 0; /* Penting: mencegah slide mengecil */
+    flex-shrink: 0; 
     position: relative;
 }
 
-/* Pastikan gambar mengisi penuh slide */
 .slide .slide-image-full {
     width: 100%;
     height: 100%;
@@ -134,7 +126,6 @@ nav a:hover {
     z-index: 1;
 }
 
-/* Navigasi (Dot) - Posisikan di bawah */
 .slider-nav-css-only {
     position: absolute;
     bottom: 20px;
@@ -142,7 +133,7 @@ nav a:hover {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
-    z-index: 10; /* Pastikan di atas slide */
+    z-index: 10; 
 }
 
 .slider-nav-css-only .slider-dot {
@@ -151,39 +142,80 @@ nav a:hover {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    display: block; /* Karena sekarang berupa label */
+    display: block;
     transition: background-color 0.3s;
 }
 
-/* Logika Pergeseran CSS-Only: */
-
-/* Ketika slide 1 dicek, geser wrapper 0% (tidak bergeser) */
 #slide1:checked ~ .slides-wrapper {
     transform: translateX(0);
 }
 
-/* Ketika slide 2 dicek, geser wrapper -100% (geser ke kiri 1 slide) */
 #slide2:checked ~ .slides-wrapper {
-    transform: translateX(-33.3333%); /* 100% / 3 slide */
+    transform: translateX(-33.3333%);
 }
 
-/* Ketika slide 3 dicek, geser wrapper -200% (geser ke kiri 2 slide) */
 #slide3:checked ~ .slides-wrapper {
-    transform: translateX(-66.6666%); /* (100% / 3) * 2 */
+    transform: translateX(-66.6666%); 
 }
 
-/* Logika Navigasi (Dot Active) */
-
-/* Ketika slide 1 dicek, aktifkan dot pertama */
 #slide1:checked ~ .slider-nav-css-only label:nth-child(1),
-/* Ketika slide 2 dicek, aktifkan dot kedua */
 #slide2:checked ~ .slider-nav-css-only label:nth-child(2),
-/* Ketika slide 3 dicek, aktifkan dot ketiga */
 #slide3:checked ~ .slider-nav-css-only label:nth-child(3) {
     background-color: white;
 }
 
-/* ... Pertahankan gaya .slide-text-overlay, .cta-button, dll. dari jawaban sebelumnya ... */
+.slider-arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 0; 
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e293b;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    user-select: none;
+    opacity: 0; 
+}
+
+.arrow:hover {
+    background-color: white;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+
+
+.slider-arrows .arrow { display: none; }
+
+#slide1:checked ~ .slider-arrows .arrow-left.arrow-1 { display: flex; opacity: 1; } 
+#slide1:checked ~ .slider-arrows .arrow-right.arrow-1 { display: flex; opacity: 1; } 
+
+
+#slide2:checked ~ .slider-arrows .arrow-left.arrow-2 { display: flex; opacity: 1; } 
+#slide2:checked ~ .slider-arrows .arrow-right.arrow-2 { display: flex; opacity: 1; } 
+
+#slide3:checked ~ .slider-arrows .arrow-left.arrow-3 { display: flex; opacity: 1; } 
+#slide3:checked ~ .slider-arrows .arrow-right.arrow-3 { display: flex; opacity: 1; } 
 
 .categories {
     max-width: 1400px;
