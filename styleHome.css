@@ -7,8 +7,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #ecfeff;
+    padding-top: 80px; /* Space for fixed header */
 }
 
+/* ============= STICKY HEADER ============= */
 header {
     background-color: white;
     padding: 15px 40px;
@@ -16,6 +18,16 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .logo {
@@ -262,175 +274,7 @@ nav a:hover {
     font-weight: 700;
 }
 
-@media (max-width: 1024px) {
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .slide h1 {
-        font-size: 48px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        padding: 15px 20px;
-    }
-
-    .search-bar {
-        order: 3;
-        width: 100%;
-        margin: 15px 0 0 0;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .slide {
-        padding: 40px;
-    }
-
-    .slide h1 {
-        font-size: 36px;
-    }
-
-    .slide-image {
-        display: none;
-    }
-
-    .slide-content {
-        max-width: 100%;
-    }
-}
-
-.search-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-    overflow: auto;
-}
-
-.search-modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 30px;
-    border-radius: 12px;
-    width: 80%;
-    max-width: 800px;
-    position: relative;
-    animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 32px;
-    font-weight: bold;
-    color: #999;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-modal:hover {
-    color: #2563eb;
-}
-
-.search-modal-content h2 {
-    color: #1e293b;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.search-query {
-    background-color: #f0f0f0;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    color: #555;
-    font-weight: 500;
-}
-
-.results-count {
-    color: #2563eb;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-.no-results {
-    text-align: center;
-    padding: 40px;
-    color: #999;
-    font-size: 18px;
-}
-
-.results-list {
-    display: grid;
-    gap: 20px;
-}
-
-.result-item {
-    background-color: #f1f5f9;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 4px solid #2563eb;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.result-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.result-item h3 {
-    color: #1e293b;
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.result-item p {
-    color: #666;
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.result-item strong {
-    color: #1e293b;
-}
-/* Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ffffff;
-    color: #1e1e1e;
-    line-height: 1.6;
-}
-
-/* ============= HALAMAN DAFTAR EVENT ============= */
+/* ============= EVENTS SECTION ============= */
 
 .container {
     max-width: 1200px;
@@ -438,7 +282,6 @@ body {
     padding: 20px;
 }
 
-/* Navigation Tabs */
 .tabs {
     display: flex;
     gap: 30px;
@@ -474,7 +317,6 @@ body {
     background-color: #3659e3;
 }
 
-/* Page Title */
 .page-title {
     font-size: 32px;
     font-weight: 700;
@@ -482,14 +324,13 @@ body {
     color: #1e1e1e;
 }
 
-/* Events Grid */
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
+    margin-bottom: 60px;
 }
 
-/* Event Card */
 .event-card {
     background: #fff;
     border-radius: 12px;
@@ -511,7 +352,6 @@ body {
     grid-column: span 2;
 }
 
-/* Event Image */
 .event-image {
     width: 100%;
     height: 200px;
@@ -530,7 +370,6 @@ body {
     object-fit: cover;
 }
 
-/* Archify Specific Styles */
 .archify-bg {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     display: flex;
@@ -538,50 +377,10 @@ body {
     justify-content: center;
 }
 
-.archify-content {
-    position: relative;
-    text-align: center;
-    z-index: 2;
-}
-
-.archify-logo {
-    font-size: 48px;
-    font-weight: 300;
-    color: #ffffff;
-    letter-spacing: -2px;
-    margin-bottom: 10px;
-}
-
-.archify-logo span {
-    font-weight: 700;
-}
-
-.archify-location {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 2px;
-}
-
-.archify-ribbon {
-    position: absolute;
-    width: 300px;
-    height: 150px;
-    right: -100px;
-    top: -50px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a6f, #c44569, #a83279, #862d86, #5f27cd);
-    border-radius: 50px;
-    transform: rotate(45deg);
-    filter: blur(40px);
-    opacity: 0.8;
-}
-
-/* Other Background Styles */
 .worship-bg, .map-bg, .christmas-bg, .ballet-bg, .bitcoin-bg, .birthday-bg, .seminar-bg {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* Event Info */
 .event-info {
     padding: 16px;
 }
@@ -618,3 +417,163 @@ body {
     margin-top: 8px;
 }
 
+/* ============= FOOTER STYLES ============= */
+
+.site-footer {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.footer-description {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #334155;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #2563eb;
+    transform: translateY(-3px);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2563eb;
+}
+
+.footer-contact {
+    list-style: none;
+}
+
+.footer-contact li {
+    color: #cbd5e1;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid #334155;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* ============= RESPONSIVE STYLES ============= */
+
+@media (max-width: 1024px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .slide h1 {
+        font-size: 48px;
+    }
+
+    .event-card.featured {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
+    header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+    }
+
+    .search-bar {
+        order: 3;
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slide {
+        padding: 40px;
+    }
+
+    .slide h1 {
+        font-size: 36px;
+    }
+
+    .slide-image {
+        display: none;
+    }
+
+    .slide-content {
+        max-width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
