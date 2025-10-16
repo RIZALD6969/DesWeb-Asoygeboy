@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gathan Arts Festival Sendra Tari Ramayana</title>
+     <link rel="stylesheet" href="EventTari.css">
+</head>
+<body>
+    <header>
+        <div class="logo">NgeventYUK</div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search events">
+            <button class="search-button">🔍</button>
+        </div>
+        <nav>
+            <a href="#">Find Event</a>
+            <a href="#">Create Events</a>
+            <a href="#">Find my tickets</a>
+            <a href="#">Log In</a>
+            <a href="#">Others ▾</a>
+        </nav>
+    </header>
+
+    <!-- Sticky Ticket Button -->
+    <button class="ticket-button-sticky" id="stickyTicketBtn">Dapatkan Tiket</button>
+
+    <div class="header-banner">
+        <!-- Background Elements -->
+        <div class="banner-stripes"></div>
+        <div class="decor-top-left"></div>
+        <div class="decor-bottom-right"></div>
+
+        <!-- Dance Silhouettes -->
+        <svg class="dance-silhouette-left" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="20" r="15" fill="white"/>
+            <path d="M 50 40 Q 40 60 35 80" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 50 50 L 30 70" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 50 50 L 70 70" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 35 80 L 25 120" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 35 80 L 45 120" stroke="white" stroke-width="3" fill="none"/>
+        </svg>
+
+        <svg class="dance-silhouette-right" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="20" r="15" fill="white"/>
+            <path d="M 50 40 Q 40 60 35 80" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 50 50 L 30 70" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 50 50 L 70 70" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 35 80 L 25 120" stroke="white" stroke-width="3" fill="none"/>
+            <path d="M 35 80 L 45 120" stroke="white" stroke-width="3" fill="none"/>
+        </svg>
+
+        <!-- Corner Decorations -->
+        <div class="corner-decor corner-decor-top-left"></div>
+        <div class="corner-decor corner-decor-top-right"></div>
+        <div class="corner-decor corner-decor-bottom-left"></div>
+        <div class="corner-decor corner-decor-bottom-right"></div>
+
+        <!-- Ornament Top -->
+        <div class="ornament-top">
+            <div class="ornament-line"></div>
+            <div class="ornament-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="banner-content">
+            <div class="logo-circle">
+                <span class="logo-text">G'AFEST</span>
+            </div>
+            
+            <h1 class="banner-title">Gathan Arts Festival</h1>
+            
+            <div class="accent-line"></div>
+            
+            <p class="banner-subtitle">Sendra Tari Ramayana</p>
+            
+            <div class="free-entry-badge">GRATIS</div>
+            
+            <p class="banner-date-location">
+                <strong>Sabtu, 25 Oktober 2025</strong> | Gedung Teater Nasional
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Add random particles
+        function createParticles() {
+            const banner = document.querySelector('.header-banner');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle particle-small';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 5) + 's';
+                banner.appendChild(particle);
+            }
+        }
+
+        createParticles();
+    </script>
+
+    <div class="container">
+        <!-- Event Info Section -->
+        <div class="event-info">
+            <div class="event-header">
+                <div class="event-title-section">
+                    <h1>Gathan Festival Seni Sendra Tari Ramayana 2025</h1>
+                    <div class="organizer">
+                        <div></div>
+                        <span>By Gathan SendraTari</span>
+                    </div>
+                    <p class="event-description">
+                        Rasakan keajaiban seni tradisional yang memukau dalam Gathan Arts Festival Sendra Tari Ramayana 2025. Pengalaman budaya yang tak terlupakan dengan pertunjukan tari Ramayana autentik, menampilkan kisah epik yang penuh makna. Kesempatan emas untuk menyaksikan keindahan warisan budaya Indonesia!
+                    </p>
+                    <div class="date-time">
+                        <h3>📅 Tanggal dan Waktu</h3>
+                        <p>Sabtu, 25 Oktober 2025 | 16.00 - 21.30 WIB</p>
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <div class="price">Gratis</div>
+                    <div class="price-date">Oktober 25 · 4:00 PM GMT+7</div>
+                    <button class="get-tickets-btn">Dapatkan Tiket</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="location-section">
+            <h2>📍 Lokasi</h2>
+            <div class="location-details">
+                <div class="location-icon">📍</div>
+                <div class="location-text">
+                    <strong>Gedung Teater Nasional Jakarta</strong><br>
+                    Jalan Medan Merdeka Timur No. 6, Jakarta Pusat 10160
+                </div>
+            </div>
+            <a href="#" style="color: #D2691E; text-decoration: none; font-size: 13px; margin-top: 10px; display: inline-block;">Lihat petunjuk arah →</a>
+        </div>
+
+        <!-- Lineup Section -->
+        <div class="lineup-section">
+            <h2>🎭 Lineup Pertunjukan</h2>
+            <div class="lineup-grid">
+                <div class="lineup-card">
+                    <div class="lineup-card-avatar">🎭</div>
+                    <h3>Tari Ramayana</h3>
+                    <p>Pertunjukan Utama</p>
+                </div>
+                <div class="lineup-card">
+                    <div class="lineup-card-avatar">🎭</div>
+                    <h3>Kesenian Wayang</h3>
+                    <p>Demonstrasi Budaya</p>
+                </div>
+                <div class="lineup-card">
+                    <div class="lineup-card-avatar">🎭</div>
+                    <h3>Tari Tradisional</h3>
+                    <p>Kolaborasi Daerah</p>
+                </div>
+                <div class="lineup-card">
+                    <div class="lineup-card-avatar">🎭</div>
+                    <h3>Musik Klasik Jawa</h3>
+                    <p>Iringan Gamelan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agenda Section -->
+        <div class="agenda-section">
+            <h2>📆 Jadwal Acara</h2>
+            <div class="agenda-tabs">
+                <button class="agenda-tab active">Open Gate</button>
+                <button class="agenda-tab">Pembukaan</button>
+                <button class="agenda-tab">Pertunjukan</button>
+                <button class="agenda-tab">Penutup</button>
+            </div>
+            <div class="agenda-time">
+                <div class="agenda-time-label">16:00 - 17:00 WIB</div>
+                <div class="agenda-time-value">Pembukaan Pintu Gerbang</div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>ℹ️ Tentang Acara Ini</h2>
+            <div class="about-content">
+                <h3>Gathan Festival Seni Sendra Tari Ramayana 2025</h3>
+                <p>Gathan SendraTari menghadirkan festival seni yang meriah dengan menampilkan keindahan tari Ramayana autentik. Bergabunglah untuk mengalami kisah epik yang penuh dengan makna budaya, kesenian tradisional yang memukau, dan momen bersejarah yang tak terlupakan.</p>
+                <p>Tahun ini festival akan hadir lebih besar dan meriah, dengan berbagai aktivitas interaktif, pameran seni, dan pertunjukan khusus yang menghadirkan beragam nuansa budaya Indonesia.</p>
+
+                <h3>Yang Bisa Kamu Nikmati!</h3>
+                <ul>
+                    <li><strong>Pertunjukan Tari Ramayana</strong> - Saksikan perpaduan sempurna antara gerakan, musik, dan cerita epik yang menginspirasi</li>
+                    <li><strong>Workshop Seni Tradisional</strong> - Kesempatan langsung belajar teknik tari dan seni dari para maestro</li>
+                    <li><strong>Pameran Kostum Tradisional</strong> - Kagumi keindahan dan detail busana tradisional yang memukau</li>
+                    <li><strong>Kuliner & Cita Rasa Nusantara</strong> - Nikmati makanan dan minuman khas dari berbagai daerah</li>
+                </ul>
+
+                <h3>Detail Acara</h3>
+                <ul>
+                    <li><strong>Tanggal:</strong> Sabtu, 25 Oktober 2025</li>
+                    <li><strong>Waktu:</strong> 16:00 - 21:30 WIB (Pembukaan: 14:00 WIB, Penutupan: 19:30 WIB)</li>
+                    <li><strong>Tempat:</strong> Gedung Teater Nasional Jakarta</li>
+                </ul>
+
+                <h3>Informasi Tiket</h3>
+                <ul>
+                    <li>Tiket festival: GRATIS, tanpa jumlab terbatas</li>
+                    <li>Tiket dapat dipesan melalui berbagai platform online</li>
+                    <li>Pendaftaran untuk workshop dan masterclass tersedia secara terpisah</li>
+                    <li>Update dan pengumuman terbaru melalui Instagram @Gathanartsfestival</li>
+                </ul>
+
+                <h3>Catatan Penting</h3>
+                <ul>
+                    <li>Ayo ke gerbang masuk melalui @GathanEventbrite</li>
+                    <li>Satu orang hanya boleh membawa maksimal 1 tiket. Pembatasan gratis akan diberikan</li>
+                    <li>Pastikan update dan pengumuman terbaru melalui Instagram @GathanArtsFestival</li>
+                </ul>
+
+                <p style="margin-top: 20px; font-style: italic;">Jangan lewatkan festival budaya paling meriah di Jakarta tahun ini!</p>
+                <p style="margin-top: 10px;">Klik tombol <strong>"Dapatkan Tiket"</strong> sekarang dan saksikan kolaborasi seni yang spektakuler!</p>
+            </div>
+        </div>
+
+        <!-- Tags Section -->
+        <div class="tags-section">
+            <h2>Tags</h2>
+            <div class="tags">
+                <span class="tag">Event Seni Indonesia</span>
+                <span class="tag">Tari Ramayana</span>
+                <span class="tag">Festival Budaya</span>
+                <span class="tag">Kesenian Tradisional</span>
+                <span class="tag">Sendra Tari</span>
+                <span class="tag">#ramayana</span>
+                <span class="tag">#kesenianindo</span>
+                <span class="tag">#taditional</span>
+                <span class="tag">#senidari</span>
+                <span class="tag">#culturalarts</span>
+            </div>
+        </div>
+
+        <!-- Organizer Section -->
+        <div class="organizer-section">
+            <h2>Diselenggarakan oleh</h2>
+            <div class="organizer-card">
+                <div class="organizer-avatar">GAF</div>
+                <div class="organizer-info">
+                    <h3>Gathan Arts Festival</h3>
+                    <div class="organizer-stats">
+                        <div><strong>5,200</strong> Pengikut</div>
+                        <div><strong>360</strong> Event</div>
+                        <div><strong>1 Minggu</strong> Mengadakan</div>
+                    </div>
+                </div>
+                <button class="follow-btn">Ikuti</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><a href="#" class="report-event">Laporkan acara ini</a></p>
+        </div>
+    </div>
+
+    <script>
+        const stickyBtn = document.getElementById('stickyTicketBtn');
+        const headerBanner = document.querySelector('.header-banner');
+
+        window.addEventListener('scroll', () => {
+            const bannerBottom = headerBanner.getBoundingClientRect().bottom;
+            
+            if (bannerBottom < 0) {
+                stickyBtn.classList.add('show');
+            } else {
+                stickyBtn.classList.remove('show');
+            }
+        });
+
+        stickyBtn.addEventListener('click', () => {
+            alert('Terima kasih! Anda akan dialihkan ke halaman pemesanan tiket.');
+        });
+
+        document.querySelectorAll('.get-tickets-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Terima kasih! Anda akan dialihkan ke halaman pemesanan tiket.');
+            });
+        });
+    </script>
+    <!-- FOOTER SECTION -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-logo">NgeventYUK</h3>
+                <p class="footer-description">Platform terbaik untuk menemukan dan menghadiri event menarik di Indonesia.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">🎸</a>
+                    <a href="#" class="social-icon">🎭</a>
+                    <a href="#" class="social-icon">⚽</a>
+                    <a href="#" class="social-icon">💼</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang NgeventYUK</a></li>
+                    <li><a href="#">Cara Kerja</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Event Organizer</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Buat Event</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Bantuan EO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Bantuan</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Hubungi Kami</h4>
+                <ul class="footer-contact">
+                    <li>📧 info@ngeventyuk.com</li>
+                    <li>📱 +62 822 8516 6958</li>
+                    <li>📍 Surakarta, Indonesia</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 NgeventYUK. All rights reserved.</p>
+            <p>Made with Kelompok 4 - Desain Web</p>
+        </div>
+    </footer>
+</body>
+</html>
