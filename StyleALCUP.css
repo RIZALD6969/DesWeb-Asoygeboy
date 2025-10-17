@@ -1,0 +1,319 @@
+/* ============= GENERAL & FONT STYLING ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Latar belakang sedikit abu-abu */
+    color: #333;
+}
+
+/* ============= HEADER STYLING (DARI ANDA) ============= */
+header {
+    background-color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: fixed; /* Header menempel di atas */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.search-bar {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+}
+
+.search-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* ============= HERO BANNER STYLING ============= */
+main {
+    padding-top: 75px; /* Memberi jarak agar konten tidak tertutup header */
+}
+
+.hero-section {
+    height: 400px;
+    background-image: url('https://www.bing.com/th/id/OIP.o7zEsAzWbnDMk4Iv0tSB8AAAAA?w=350&h=211&c=8&rs=1&qlt=90&o=6&cb=12&dpr=1.5&pid=3.1&rm=2'); /* Gambar placeholder teknologi/AI */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(20, 26, 82, 0.7), rgba(41, 10, 99, 0.6)); /* Overlay gradasi gelap */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+}
+
+/* ============= EVENT DETAIL & TICKET BOX STYLING ============= */
+.event-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.event-details {
+    flex: 2;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.event-date-highlight {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.event-details h2 {
+    font-size: 2em;
+    margin: 0 0 15px 0;
+}
+
+.organizer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.follow-btn {
+    padding: 6px 18px;
+    border: 1px solid #2563eb;
+    color: #2563eb;
+    background: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.7;
+    color: #555;
+}
+
+.info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-block .icon {
+    font-size: 1.5em;
+    color: #2563eb;
+}
+
+.info-block .info-text p {
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+/* ============= TICKET BOX STYLING ============= */
+.ticket-box {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 100px; /* Jarak dari atas saat menempel (75px tinggi header + 25px spasi) */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Animasi untuk JS */
+}
+
+/* Class ini ditambahkan oleh JavaScript saat scroll ke bawah */
+.ticket-box.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.ticket-price {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ticket-date {
+    color: #666;
+    margin: 5px 0 20px 0;
+    font-size: 0.9em;
+}
+
+.get-ticket-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.get-ticket-btn:hover {
+    background-color: #1e40af;
+}
+
+/* ============= FOOTER STYLING (DARI ANDA) ============= */
+.site-footer {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-logo {
+    color: #ecfeff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    max-width: 250px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-links, .footer-contact {
+    list-style: none;
+}
+
+.footer-links li, .footer-contact li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-contact {
+    font-size: 14px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #94a3b8;
+}
