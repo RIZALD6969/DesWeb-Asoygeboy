@@ -78,12 +78,36 @@ nav a {
     color: #1e293b;
     font-weight: 500;
     font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 nav a:hover {
     color: #2563eb;
+    background-color: #eff6ff;
 }
 
+/* ============= ACTIVE PAGE INDICATOR ============= */
+nav a.active {
+    color: #2563eb;
+    background-color: #dbeafe;
+    font-weight: 600;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+/* ============= HERO SLIDER ============= */
 .hero {
     max-width: 1400px; 
     margin: 40px auto; 
@@ -124,6 +148,36 @@ nav a:hover {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.slide-text-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    color: white;
+}
+
+.slide-text-overlay h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1e40af;
 }
 
 .slider-nav-css-only {
@@ -203,13 +257,12 @@ nav a:hover {
     right: 20px;
 }
 
-
-
-.slider-arrows .arrow { display: none; }
+.slider-arrows .arrow { 
+    display: none; 
+}
 
 #slide1:checked ~ .slider-arrows .arrow-left.arrow-1 { display: flex; opacity: 1; } 
 #slide1:checked ~ .slider-arrows .arrow-right.arrow-1 { display: flex; opacity: 1; } 
-
 
 #slide2:checked ~ .slider-arrows .arrow-left.arrow-2 { display: flex; opacity: 1; } 
 #slide2:checked ~ .slider-arrows .arrow-right.arrow-2 { display: flex; opacity: 1; } 
@@ -217,6 +270,7 @@ nav a:hover {
 #slide3:checked ~ .slider-arrows .arrow-left.arrow-3 { display: flex; opacity: 1; } 
 #slide3:checked ~ .slider-arrows .arrow-right.arrow-3 { display: flex; opacity: 1; } 
 
+/* ============= CATEGORIES SECTION ============= */
 .categories {
     max-width: 1400px;
     margin: 60px auto;
@@ -279,7 +333,6 @@ nav a:hover {
 }
 
 /* ============= EVENTS SECTION ============= */
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -422,7 +475,6 @@ nav a:hover {
 }
 
 /* ============= FOOTER STYLES ============= */
-
 .site-footer {
     background-color: #1e293b;
     color: #e2e8f0;
@@ -525,14 +577,13 @@ nav a:hover {
 }
 
 /* ============= RESPONSIVE STYLES ============= */
-
 @media (max-width: 1024px) {
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .slide h1 {
-        font-size: 48px;
+    .slide-text-overlay h1 {
+        font-size: 36px;
     }
 
     .event-card.featured {
@@ -556,24 +607,27 @@ nav a:hover {
         margin: 15px 0 0 0;
     }
 
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .slide {
-        padding: 40px;
+    .slide-text-overlay {
+        padding: 20px;
+        left: 20px;
+        bottom: 20px;
     }
 
-    .slide h1 {
-        font-size: 36px;
-    }
-
-    .slide-image {
-        display: none;
-    }
-
-    .slide-content {
-        max-width: 100%;
+    .slide-text-overlay h1 {
+        font-size: 24px;
     }
 
     .footer-container {
