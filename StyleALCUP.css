@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa; /* Latar belakang sedikit abu-abu */
+    background-color: #f8f9fa; /* Latar belakang halaman */
     color: #333;
 }
 
@@ -19,7 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: fixed; /* Header menempel di atas */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
@@ -75,7 +75,7 @@ nav a:hover {
     color: #2563eb;
 }
 
-/* ============= HERO BANNER STYLING ============= */
+/* ============= KONTEN UTAMA ============= */
 main {
     padding-top: 75px; /* Memberi jarak agar konten tidak tertutup header */
 }
@@ -120,7 +120,7 @@ main {
     font-size: 1.25rem;
 }
 
-/* ============= EVENT DETAIL & TICKET BOX STYLING ============= */
+/* ============= CONTAINER DETAIL EVENT & TIKET ============= */
 .event-container {
     display: flex;
     max-width: 1100px;
@@ -130,12 +130,9 @@ main {
     padding: 0 20px;
 }
 
+/* Kolom Kiri: Detail Event (Tanpa Box Styling) */
 .event-details {
-    flex: 2;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    flex: 2; /* Hanya mengatur lebar */
 }
 
 .event-date-highlight {
@@ -190,24 +187,14 @@ main {
     color: #555;
 }
 
-/* ============= TICKET BOX STYLING ============= */
+/* Kolom Kanan: Tiket (CSS-Only Sticky) */
 .ticket-box {
-    flex: 1;
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 100px; /* Jarak dari atas saat menempel (75px tinggi header + 25px spasi) */
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Animasi untuk JS */
+    flex: 1; 
+    position: sticky; /* Ini adalah solusi CSS-only */
+    top: 100px; /* Jarak dari atas (75px header + 25px spasi) */
 }
 
-/* Class ini ditambahkan oleh JavaScript saat scroll ke bawah */
-.ticket-box.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-}
-
+/* Elemen di dalam tiket box tetap memiliki style */
 .ticket-price {
     font-size: 1.1em;
     font-weight: 600;
@@ -231,6 +218,7 @@ main {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); /* Tambah shadow di tombol */
 }
 
 .get-ticket-btn:hover {
