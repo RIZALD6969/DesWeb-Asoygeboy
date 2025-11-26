@@ -84,28 +84,24 @@ nav a:hover {
     color: #3b82f6;
 }
 
-/* ============================================
-   HERO (BANNER "AL CUP")
-   ============================================ */
+
 .hero-section {
     position: relative;
     width: 100%;
-    height: 350px; /* Tinggi banner */
+    height: 350px;
     display: grid;
     place-items: center;
     text-align: center;
     color: white;
 
-    /* Ganti URL ini dengan gambar banner voli Anda */
+
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('BisnisCover.png');
     background-size: cover;
     background-position: center;
 }
 
 
-/* ============================================
-   KONTEN UTAMA (EVENT CONTAINER)
-   ============================================ */
+
 .event-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -116,9 +112,7 @@ nav a:hover {
     align-items: start;
 }
 
-/* ============================================
-   KOLOM KIRI (EVENT DETAILS)
-   ============================================ */
+
 .event-details {
     max-width: 100%;
     overflow-wrap: break-word;
@@ -213,14 +207,10 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* ============================================
-   KOLOM KANAN (TICKET BOX) - GAYA GARIS TEPI
-   ============================================ */
 .ticket-box {
     position: sticky;
     top: 100px; 
     
-    /* Ini adalah gaya "garis tepi" yang Anda minta */
     background-color: #ffffff; /* Latar putih (menyatu body) */
     border: 1px solid #d1d5db;  /* Garis tepi abu-abu muda */
     border-radius: 12px;         /* Sudut melengkung */
