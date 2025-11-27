@@ -452,3 +452,100 @@ nav a:hover {
 .footer-bottom p {
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; 
+        padding: 0.75rem 4%;
+    }
+
+    .logo {
+        flex-basis: 100%; 
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .search-bar {
+        width: 100%;
+        order: 2; 
+    }
+
+    nav {
+        order: 3; 
+        flex-basis: 100%;
+        justify-content: space-around;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 0;
+    }
+
+    .hero-section {
+        height: 250px; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin: 24px auto;
+    }
+
+    .ticket-box {
+        position: static; 
+        order: 1; 
+    }
+    
+    .event-details {
+        order: 2; 
+    }
+
+    .organizer-card {
+        padding: 20px;
+    }
+
+    .organizer-header {
+        align-items: flex-start;
+    }
+
+    .organizer-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .organizer-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-btn, .follow-btn-large {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .event-container {
+        grid-template-columns: 1fr 1fr; 
+        gap: 24px;
+    }
+
+    .search-bar {
+        width: 30%;
+    }
+}
