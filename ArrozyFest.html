@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArrozyFest - NgeventYUK</title>
+    <title>AL Cup - AI Group at Surakarta</title>
+
     <link rel="stylesheet" href="stylearrozyfest.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 </head>
 <body>
 
@@ -13,226 +19,125 @@
         <div class="logo">NgeventYUK</div>
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search events">
-            <button class="search-button">🔍</button>
+            <button class="search-button"><i class="ph ph-magnifying-glass"></i></button>
         </div>
         <nav>
-            <a href="Home.html">Home</a>
-            <a href="Findevent.html">Find Event</a>
-            <a href="create.html">Create Events</a>
+            <a href="#">Find Event</a>
+            <a href="#">Create Events</a>
             <a href="#">Find my tickets</a>
-            <a href="sign-in.html">Log In</a>
-            <a href="#">Others ▾</a>
+            <a href="#">Log In</a>
+            <a href="#">Others <i class="ph ph-caret-down"></i></a>
         </nav>
     </header>
 
-    <main class="content-wrapper">
-        
-         <div class="header-banner">
-        <!-- Glow Background -->
-        <div class="glow-bg">
-            <div class="glow-circle-1"></div>
-            <div class="glow-circle-2"></div>
-            <div class="glow-circle-3"></div>
-        </div>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+            </div>
+        </section>
 
-        <!-- Geometric Shapes -->
-        <div class="geometric geo-yellow-top"></div>
-        <div class="geometric geo-magenta-top"></div>
-        <div class="geometric geo-yellow-right"></div>
-        <div class="geometric geo-magenta-bottom"></div>
-
-        <!-- Kites -->
-        <div class="kite-container">
-            <!-- Left Kite (Yellow) -->
-            <svg class="kite kite-left" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="kiteYellow" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#FFFF00;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <polygon points="50,10 90,50 50,100 10,50" fill="url(#kiteYellow)"/>
-                <line x1="50" y1="10" x2="50" y2="100" stroke="#FF6400" stroke-width="2"/>
-                <line x1="10" y1="50" x2="90" y2="50" stroke="#FF6400" stroke-width="2"/>
-            </svg>
-
-            <!-- Right Kite (Magenta) -->
-            <svg class="kite kite-right" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="kiteMagenta" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#FF00FF;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <polygon points="50,10 90,50 50,100 10,50" fill="url(#kiteMagenta)"/>
-                <line x1="50" y1="10" x2="50" y2="100" stroke="#00FF00" stroke-width="2"/>
-                <line x1="10" y1="50" x2="90" y2="50" stroke="#00FF00" stroke-width="2"/>
-            </svg>
-        </div>
-
-        <!-- Leaves -->
-        <svg class="leaf leaf-1" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15,5 Q25,15 15,25 Q5,15 15,5" fill="#00AA55" opacity="0.8"/>
-        </svg>
-        <svg class="leaf leaf-2" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15,5 Q25,15 15,25 Q5,15 15,5" fill="#00DD77" opacity="0.8"/>
-        </svg>
-        <svg class="leaf leaf-3" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15,5 Q25,15 15,25 Q5,15 15,5" fill="#00AA55" opacity="0.8"/>
-        </svg>
-        <svg class="leaf leaf-4" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15,5 Q25,15 15,25 Q5,15 15,5" fill="#00DD77" opacity="0.8"/>
-        </svg>
-
-        <!-- Music Icons -->
-        <div class="music-icon music-icon-1">🎵</div>
-        <div class="music-icon music-icon-2">🎶</div>
-        <div class="music-icon music-icon-3">🎤</div>
-
-        <!-- Main Content -->
-        <div class="banner-content">
-            <div class="banner-content">
-                <h1 class="banner-title">Arrozy Fest</h1>
+        <div class="event-container">
+            
+            <div class="event-details">
+                <p class="event-date-highlight">Mulai dari 18 - 23 Desember</p>
+                <h2>AI Group Tournament at Surakarta 2025</h2>
                 
-                <p class="banner-subtitle">at SURAKARTA</p>
-                
-                </div>
-        </div>
-    </div>
-
-    <script>
-        // Create floating bubbles
-        function createBubbles() {
-            const banner = document.querySelector('.header-banner');
-            for (let i = 0; i < 25; i++) {
-                const bubble = document.createElement('div');
-                bubble.className = 'bubble';
-                bubble.style.left = Math.random() * 100 + '%';
-                bubble.style.top = Math.random() * 100 + '%';
-                bubble.style.animationDelay = Math.random() * 6 + 's';
-                bubble.style.animationDuration = (Math.random() * 4 + 6) + 's';
-                bubble.style.width = (Math.random() * 6 + 4) + 'px';
-                bubble.style.height = bubble.style.width;
-                banner.appendChild(bubble);
-            }
-        }
-
-        // Create pulse circles
-        function createPulses() {
-            const banner = document.querySelector('.header-banner');
-            for (let i = 0; i < 8; i++) {
-                const pulse = document.createElement('div');
-                pulse.className = 'pulse-circle';
-                pulse.style.left = Math.random() * 100 + '%';
-                pulse.style.top = Math.random() * 100 + '%';
-                pulse.style.width = (Math.random() * 40 + 20) + 'px';
-                pulse.style.height = pulse.style.width;
-                pulse.style.animationDelay = Math.random() * 3 + 's';
-                banner.appendChild(pulse);
-            }
-        }
-
-        createBubbles();
-        createPulses();
-    </script>
-
-        <div class="main-content-area">
-            <div class="detail-content-left">
-                
-                <div class="event-header-info">
-                    <p class="event-date-mobile">Sabtu, 14 Desember</p>
-                    <div class="title-and-actions">
-                        <h1 class="event-title">Arrozy Festival at Surakarta 2025</h1>
-                        <div class="actions">
-                            <button class="action-icon">❤️</button>
-                            <button class="action-icon">↗️</button>
-                        </div>
-                    </div>
-                    <div class="organizer-info">
-                        <span class="organizer-name">By Arrozy Ent.</span>
-                        <button class="follow-button">Follow</button>
-                    </div>
-
-                    <p class="event-short-description">
-                        Pesta musik, seni, dan kuliner terbesar di Surakarta. Menampilkan artis nasional dan lokal terbaik!
-                    </p>
-                </div>
-                
-                <hr class="separator-line">
-
-                <div class="detail-info-section">
-                    
-                    <div class="info-block">
-                        <span class="info-icon">📅</span>
-                        <div class="info-text">
-                            <h3>Tanggal dan Waktu</h3>
-                            <p>Sabtu, 14 Desember, 2025</p>
-                            <p>15:00 - 23:00 WIB</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-block">
-                        <span class="info-icon">📍</span>
-                        <div class="info-text">
-                            <h3>Lokasi</h3>
-                            <p>Lapangan Pamedan, Surakarta</p>
-                            <p class="location-detail">Lihat Peta</p>
-                        </div>
-                    </div>
-
+                <div class="organizer">
+                    By <strong>AI Group Corp.</strong>
+                    <button class="follow-btn">Follow</button>
                 </div>
 
-                <hr class="separator-line">
+                <p class="description">
+                    Turnamen inovasi teknologi, sportivitas, dan kecerdasan yang diselenggarakan terbesar di Surakarta. Menampilkan para atlet bertslenta besar nasional dan lokal terbaik!
+                </p>
 
-                <div class="about-section">
-                    <h2>Tentang Event Ini</h2>
-                    <p>
-                        Arrozy Fest hadir kembali di Surakarta! Setelah sukses besar tahun lalu, kami kembali dengan line-up artis yang lebih spektakuler dan pengalaman festival yang lebih imersif. Nikmati perpaduan sempurna antara penampilan musik, instalasi seni interaktif, dan surga kuliner dari UMKM lokal terbaik.
-                    </p>
-                    <p>
-                        Jangan lewatkan kesempatan untuk menjadi bagian dari perayaan budaya dan kreativitas ini. Segera amankan tiket Anda dan bersiaplah untuk malam yang tak terlupakan!
-                    </p>
-                    <p class="read-more">Baca lebih lanjut...</p>
-                </div>
-                
-                <hr class="separator-line">
-
-                <div class="organizer-detail-section">
-                    <h2>Penyelenggara</h2>
-                    <div class="organizer-card">
-                        <div class="organizer-avatar">A E</div>
-                        <div class="organizer-details">
-                            <h4>Arrozy Entertainment</h4>
-                            <p>7k    Pengikut</p>
-                            <button class="follow-button-large">Follow</button>
-                        </div>
+                <div class="info-block">
+                    <span class="icon"><i class="ph ph-calendar"></i></span>
+                    <div class="info-text">
+                        <strong>Tanggal dan Waktu</strong>
+                        <p>Sabtu - Kamis, 18 - 23 Desember, 2025</p>
+                        <p>19:00 - 00:00 WIB</p>
                     </div>
-                    <p class="organizer-description">
-                        Arrozy Entertainment adalah promotor event terkemuka yang berfokus pada festival musik dan budaya di Jawa Tengah.
-                    </p>
                 </div>
 
-            </div> 
-            <div class="sidebar-right">
-                <div class="ticket-box">
-                    <p class="ticket-status">Gratis - Mulai dari</p>
-                    <p class="ticket-date-time">14 Nov - 15:00 WIB</p>
-                    <button class="get-tickets-button">Dapatkan Tiket</button>
+                <div class="info-block">
+                    <span class="icon"><i class="ph ph-map-pin"></i></span>
+                    <div class="info-text">
+                        <strong>Lokasi</strong>
+                        <p>Sritex Arena, Surakarta</p>
+                    </div>
                 </div>
             </div>
-         </div>
+
+            <aside class="ticket-box" id="ticket-box">
+                <p class="ticket-price">Gratis - Mulai dari</p>
+                <p class="ticket-date">Pendaftaran: 19 Nov - 10 Des</p>
+                <button class="get-ticket-btn">Dapatkan Tiket</button>
+            </aside>
+        </div>
+
+        <section class="tags-section">
+            <h2>Tags</h2>
+            <div class="tags-container">
+                <span class="tag">Indonesia Events</span>
+                <span class="tag">Surakarta Events</span>
+                <span class="tag">Al Group</span>
+                <span class="tag">Sportivitas</span>
+                <span class="tag">Terbaik Sesurakarta</span>
+                <span class="tag">#vollyball</span>
+                <span class="tag">#olahraga</span>
+                <span class="tag">#surakarta</span>
+                <span class="tag">#sportivitas</span>
+                <span class="tag">#teknik</span>
+                <span class="tag">#penguasaan</span>
+            </div>
+        </section>
+
+        <section class="organizer-detail-section">
+            <h2>Organized by</h2>
+            <div class="organizer-card">
+                <div class="organizer-header">
+                    <div class="organizer-logo">A</div>
+                    <div class="organizer-details">
+                        <h3>AL' ent.</h3>
+                        <div class="organizer-stats">
+                            <div class="stat">
+                                <span class="stat-label">Followers</span>
+                                <span class="stat-value">5k</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Events</span>
+                                <span class="stat-value">156</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Hosting</span>
+                                <span class="stat-value">12 years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="organizer-actions">
+                    <button class="contact-btn">Contact</button>
+                    <button class="follow-btn-large">Follow</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="report-section">
+            <a href="#" class="report-link">Report this event</a>
+        </div>
     </main>
 
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h3 class="footer-logo">NgeventYUK</h3>
-                <p class="footer-description">Platform terbaik untuk menemukan dan menghadiri event menarik di Indonesia.</p>
+                <p class="footer-description">Platform terbaik untuk menemukan dan menghadiri event...</p>
                 <div class="social-links">
-                    <a href="#" class="social-icon">🎸</a>
-                    <a href="#" class="social-icon">🎭</a>
-                    <a href="#" class="social-icon">⚽</a>
-                    <a href="#" class="social-icon">💼</a>
+                    <a href="#" class="social-icon"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-linkedin-logo"></i></a>
                 </div>
             </div>
 
@@ -269,9 +174,9 @@
             <div class="footer-section">
                 <h4>Hubungi Kami</h4>
                 <ul class="footer-contact">
-                    <li>📧 info@ngeventyuk.com</li>
-                    <li>📱 +62 822 8516 6958</li>
-                    <li>📍 Surakarta, Indonesia</li>
+                    <li><i class="ph ph-envelope"></i> info@ngeventyuk.com</li>
+                    <li><i class="ph ph-phone"></i> +62 822 8516 6958</li>
+                    <li><i class="ph ph-map-pin"></i> Surakarta, Indonesia</li>
                 </ul>
             </div>
         </div>
@@ -281,28 +186,6 @@
             <p>Made with Kelompok 4 - Desain Web</p>
         </div>
     </footer>
-    
-    <script>
-        document.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            const stickyFooter = document.querySelector('.sticky-ticket-footer');
-            const scrollPosition = window.scrollY;
 
-            // Efek box-shadow pada header
-            if (scrollPosition > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            // Logika sederhana untuk tiket footer: Muncul setelah melewati banner (sekitar 300px)
-            // Ini adalah interpretasi 'muncul saat scroll' tanpa JS yang kompleks.
-            if (scrollPosition > 350) {
-                stickyFooter.style.transform = 'translateY(0)';
-            } else {
-                stickyFooter.style.transform = 'translateY(100%)';
-            }
-        });
-    </script>
 </body>
 </html>
