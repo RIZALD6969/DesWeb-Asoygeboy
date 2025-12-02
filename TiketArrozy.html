@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran - Arrozy Fest</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+    
+    <script>
+        const HARGA_TIKET = 35000;
+        const BIAYA_LAYANAN = HARGA_TIKET * 0.05; 
+        const TOTAL_BAYAR = HARGA_TIKET + BIAYA_LAYANAN; 
+    </script>
+
+    <style>
+        /* ============================================
+           PENGATURAN GLOBAL
+           ============================================ */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif; 
+            background-color: #f8f9fa; /* Latar belakang body sedikit abu-abu */
+            color: #111827; 
+        }
+        
+        a {
+            text-decoration: none;
+            color: #3b82f6; 
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #0d6efd;
+        }
+        
+        /* ============================================
+           HEADER / NAVBAR
+           ============================================ */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+        }
+        
+        .logo {
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: #111827;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; 
+        }
+        
+        nav a {
+            color: #374151; 
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* ============================================
+           HALAMAN KONFIRMASI PEMBAYARAN
+           ============================================ */
+        
+        .purchase-container {
+            max-width: 700px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .purchase-header h1 {
+            font-size: 2.2rem;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        
+        .purchase-header p {
+            color: #6c757d;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .summary-box {
+            background-color: #ffffff;
+            border: 2px solid #3b82f6; /* Border Biru Utama */
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .summary-box h2 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: #3b82f6;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .summary-detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            padding-bottom: 5px;
+        }
+        
+        .summary-total {
+            border-top: 2px solid #dee2e6;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0d6efd; /* Warna Total */
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 25px;
+            background-color: #28a745; /* Hijau Segar */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #218838;
+        }
+        
+        /* ============================================
+           FOOTER - TATA LETAK HORIZONTAL
+           ============================================ */
+        .site-footer {
+        background-color: #111827; 
+        color: #d1d5db; 
+        padding: 48px 5%;
+        margin-top: 64px;
+        }
+
+        .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 32px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+        color: #ffffff;
+        margin-bottom: 16px;
+        font-weight: 600;
+        }
+
+        .footer-logo {
+        font-size: 1.5rem;
+        }
+
+        .footer-description {
+        margin-bottom: 16px;
+        line-height: 1.6;
+        font-size: 0.9rem;
+        }
+
+        .social-links {
+        display: flex;
+        gap: 12px;
+        }
+        .social-icon {
+        color: #d1d5db;
+        font-size: 1.25rem;
+        text-decoration: none;
+        }
+        .social-icon:hover {
+        color: #ffffff;
+        }
+
+        .footer-links,
+        .footer-contact {
+        list-style: none;
+        font-size: 0.9rem;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+        margin-bottom: 12px;
+        }
+
+        .footer-links a {
+        text-decoration: none;
+        color: #d1d5db;
+        }
+        .footer-links a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+        }
+
+        .footer-contact li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        }
+
+        .footer-bottom {
+        border-top: 1px solid #374151; 
+        margin-top: 32px;
+        padding-top: 32px;
+        text-align: center;
+        font-size: 0.875rem; 
+        color: #9ca3af;
+        }
+
+        .footer-bottom p {
+        margin: 0;
+        }
+        
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; 
+                align-items: flex-start;
+                padding: 1rem 4%;
+            }
+        
+            nav {
+                margin-top: 10px;
+                width: 100%;
+                justify-content: space-between;
+            }
+        
+            .footer-container {
+                flex-direction: column; 
+                align-items: flex-start;
+                gap: 15px;
+            }
+        
+            .footer-nav-links {
+                flex-direction: column; 
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NgeventYUK</div>
+        <nav>
+            <a href="aldi sporty.html"><i class="ph ph-arrow-left"></i> Kembali ke Event</a>
+            <a href="#"><i class="ph ph-question"></i> Bantuan</a>
+        </nav>
+    </header>
+
+    <main class="purchase-container">
+        <div class="purchase-header">
+            <h1>Konfirmasi Pembelian Tiket</h1>
+            <p>Arrozy Fest | 15 Desember</p>
+        </div>
+
+        <section class="summary-box">
+            <h2>Detail Tiket & Pembayaran</h2>
+            
+            <div class="summary-detail">
+                <span>Tiket</span>
+                <span>Tiket Harian VIP (1x)</span>
+            </div>
+            
+            <div class="summary-detail">
+                <span>Harga Tiket</span>
+                <span id="harga-tiket"></span>
+            </div>
+            
+            <div class="summary-detail">
+                <span>Biaya Layanan (5%)</span>
+                <span id="service-fee"></span>
+            </div>
+            
+            <div class="summary-total summary-detail">
+                <span>TOTAL HARUS DIBAYAR</span>
+                <span id="total-amount"></span>
+            </div>
+
+            <button class="checkout-btn" id="confirm-payment-btn">
+                Konfirmasi & Bayar Sekarang
+            </button>
+        </section>
+        
+        <div style="margin-top: 20px; text-align: center; color: #6c757d;">
+            <p style="font-size: 0.9rem;">*Simulasi: Pembayaran akan dikonfirmasi melalui pop-up JavaScript.</p>
+        </div>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-logo">NgeventYUK</h3>
+                <p class="footer-description">Platform terbaik untuk menemukan dan menghadiri event...</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#" class="social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Tentang Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang NgeventYUK</a></li>
+                    <li><a href="#">Cara Kerja</a></li>
+                    <li><a href="#">Karir</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Event Organizer</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Buat Event</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Bantuan EO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Bantuan</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Kebijakan Privasi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Hubungi Kami</h4>
+                <ul class="footer-contact">
+                    <li><i class="ph ph-envelope"></i> info@ngeventyuk.com</li>
+                    <li><i class="ph ph-phone"></i> +62 822 8516 6958</li>
+                    <li><i class="ph ph-map-pin"></i> Surakarta, Indonesia</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 NgeventYUK. All rights reserved.</p>
+            <p>Made with Kelompok 4 - Desain Web</p>
+        </div>
+    </footer>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const confirmBtn = document.getElementById('confirm-payment-btn');
+            
+            function formatRupiah(number) {
+                return 'Rp ' + number.toLocaleString('id-ID');
+            }
+
+            // ISI DATA HARGA KE HTML
+            document.getElementById('harga-tiket').textContent = formatRupiah(HARGA_TIKET);
+            document.getElementById('service-fee').textContent = formatRupiah(BIAYA_LAYANAN);
+            document.getElementById('total-amount').textContent = formatRupiah(TOTAL_BAYAR);
+            confirmBtn.textContent = `Konfirmasi & Bayar Sekarang (${formatRupiah(TOTAL_BAYAR)})`;
+
+            // EVENT LISTENER UNTUK TOMBOL BAYAR
+            confirmBtn.addEventListener('click', () => {
+                const totalRupiah = formatRupiah(TOTAL_BAYAR);
+                
+                const konfirmasi = confirm(
+                    `[SIMULASI] Anda akan membayar ${totalRupiah} untuk 1 Tiket Harian VIP.\n\n` +
+                    `Klik OK untuk melanjutkan pembayaran, atau CANCEL untuk membatalkan.`
+                );
+
+                if (konfirmasi) {
+                    alert(`✅ Pembayaran ${totalRupiah} BERHASIL!\nTiket Anda akan dikirim ke email. Tugas Selesai!`);
+                } else {
+                    alert('Pembayaran dibatalkan.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
