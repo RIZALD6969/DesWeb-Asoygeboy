@@ -107,6 +107,41 @@ nav a.active::after {
     border-radius: 2px;
 }
 
+/* ============= MENU TOGGLE (BARU) ============= */
+.menu-toggle {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001; 
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #1e293b; 
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Gaya animasi silang (X) */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+/* ============= END MENU TOGGLE ============= */
+
+
 /* ============= HERO SLIDER ============= */
 .hero {
     max-width: 1400px; 
@@ -351,11 +386,18 @@ nav a.active::after {
     font-weight: 700;
 }
 
-/* ============= EVENTS SECTION ============= */
+/* ============= EVENTS SECTION & TABS (MODIFIKASI) ============= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1e1e1e;
 }
 
 .tabs {
@@ -393,12 +435,21 @@ nav a.active::after {
     background-color: #3659e3;
 }
 
-.page-title {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #1e1e1e;
+/* --- Gaya Baru untuk Tab Content --- */
+.tab-pane {
+    display: none; /* Sembunyikan semua konten tab secara default */
+    animation: fadeIn 0.5s;
 }
+
+.tab-pane.active {
+    display: block; /* Tampilkan konten tab yang memiliki class 'active' */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* --- Akhir Gaya Tab Content --- */
 
 .events-grid {
     display: grid;
@@ -595,7 +646,7 @@ nav a.active::after {
     margin: 5px 0;
 }
 
-/* ============= RESPONSIVE STYLES ============= */
+/* ============= RESPONSIVE STYLES (MODIFIKASI PENTING) ============= */
 @media (max-width: 1024px) {
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -612,28 +663,63 @@ nav a.active::after {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 120px;
+        padding-top: 70px; /* Padding disesuaikan */
     }
 
     header {
-        flex-wrap: wrap;
-        padding: 15px 20px;
+        flex-wrap: nowrap; /* Penting: Mencegah elemen berantakan */
+        padding: 10px 20px;
+        justify-content: flex-start; 
+    }
+
+    /* --- REPOSISI ELEMEN HEADER DENGAN 'ORDER' (Hamburger di kanan Search Bar) --- */
+    
+    .logo {
+        flex-shrink: 0;
+        order: 1; /* Paling kiri */
+        margin-right: 15px;
     }
 
     .search-bar {
-        order: 3;
-        width: 100%;
-        margin: 15px 0 0 0;
+        order: 2; /* Di tengah */
+        flex: 1; 
+        max-width: none;
+        margin: 0; 
     }
 
+    .menu-toggle {
+        display: flex; /* Tampilkan Hamburger */
+        order: 3; /* Paling kanan */
+        margin-left: 15px;
+    }
+    
+    /* --- Navigasi Mobile (Hamburger Menu Dropdown) --- */
     nav {
-        gap: 15px;
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 65px; /* Tepat di bawah header */
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+        padding: 10px 0;
     }
 
-    nav a {
-        font-size: 12px;
-        padding: 6px 12px;
+    nav.open {
+        display: flex; /* Tampilkan saat aktif */
     }
+    
+    nav a {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        text-align: left;
+    }
+    /* --- Akhir Navigasi Mobile --- */
+
 
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -647,6 +733,14 @@ nav a.active::after {
 
     .slide-text-overlay h1 {
         font-size: 24px;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+    }
+
+    .event-card.featured {
+        grid-column: span 1; /* Non-featured di mobile */
     }
 
     .footer-container {
