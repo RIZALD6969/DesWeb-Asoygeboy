@@ -17,27 +17,45 @@
 
     <header>
         <div class="logo">NgeventYUK</div>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search events">
             <button class="search-button"><i class="ph ph-magnifying-glass"></i></button>
         </div>
-        <nav>
+        
+        <nav id="main-nav">
             <a href="index.html">Home</a>
             <a href="Findevent.html">Find Event</a>
-            <a href="create.html" target="_blank">Create Events</a>
             <a href="sign-in.html" target="_blank">Log In</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero-section">
+        <section class="hero-section-video">
+            <video id="heroVideo" autoplay loop muted playsinline class="hero-video"> 
+                <source src="WhatsApp Video 2025-12-07 at 17.27.30.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+            <div class="hero-content">
+                <h1>EzBags Music Fest 2025</h1>
+                <p>Bersiaplah untuk melodi terbaik</p>
+                
+                <button id="muteToggle" class="mute-button">
+                    <i class="ph ph-speaker-simple-slash"></i> Unmute
+                </button>
+            </div>
         </section>
-
         <div class="event-container">
             
             <div class="event-details">
                 <p class="event-date-highlight"> 29 November 2025 </p>
-                <h2> EzBags Music Fest 2025l</h2>
+                <h2> EzBags Music Fest 2025</h2>
                 
                 <div class="organizer">
                     By <strong>EzBags Entertainment.</strong>
@@ -67,7 +85,7 @@
             </div>
 
             <aside class="ticket-box" id="ticket-box">
-                <p class="ticket-price">Rp. 50.000  /1 orang</p>
+                <p class="ticket-price">Rp. 50.000 /1 orang</p>
                 <p class="ticket-date">Presale: Mulai 1 September 2025 </p>
                 <a href="TiketMusik.html">
                     <button class="get-ticket-btn">Dapatkan Tiket</button>
@@ -185,6 +203,41 @@
             <p>Made with Kelompok 4 - Desain Web</p>
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logika Menu Hamburger
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active'); 
+                    mainNav.classList.toggle('open');
+                });
+            }
 
+            // Logika Mute/Unmute Video Banner (BARU)
+            const heroVideo = document.getElementById('heroVideo');
+            const muteToggle = document.getElementById('muteToggle');
+
+            if (heroVideo && muteToggle) {
+                // Inisialisasi ikon berdasarkan status awal (muted)
+                muteToggle.innerHTML = '<i class="ph ph-speaker-simple-slash"></i> Unmute';
+                
+                muteToggle.addEventListener('click', function() {
+                    if (heroVideo.muted) {
+                        heroVideo.muted = false;
+                        muteToggle.innerHTML = '<i class="ph ph-speaker-high"></i> Mute';
+                        muteToggle.classList.add('unmuted');
+                    } else {
+                        heroVideo.muted = true;
+                        muteToggle.innerHTML = '<i class="ph ph-speaker-simple-slash"></i> Unmute';
+                        muteToggle.classList.remove('unmuted');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
