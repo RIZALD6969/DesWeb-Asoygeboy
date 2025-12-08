@@ -17,14 +17,21 @@
 
     <header>
         <div class="logo">NgeventYUK</div>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="search-bar">
             <input type="text" class="search-input" placeholder="Search events">
             <button class="search-button"><i class="ph ph-magnifying-glass"></i></button>
         </div>
-        <nav>
+        
+        <nav id="main-nav">
             <a href="index.html">Home</a>
             <a href="Findevent.html">Find Event</a>
-            <a href="create.html" target="_blank">Create Events</a>
+
             <a href="sign-in.html" target="_blank">Log In</a>
         </nav>
     </header>
@@ -185,6 +192,19 @@
             <p>Made with Kelompok 4 - Desain Web</p>
         </div>
     </footer>
-
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active'); 
+                    mainNav.classList.toggle('open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
